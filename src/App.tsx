@@ -6,19 +6,22 @@ import InputForm from "./components/InputForm/InputForm";
 import NoteList from "./components/ListOfNote/NoteList";
 import SummeryTable from "./components/SummaryTabel/SummeryTable";
 
-
+const defaultNotes = [
+    {id: 1,title: "Monday" ,created: "Apr 07,2022" ,category: "idea",content: "Hello 20/04/2022 Word",active: true },
+    {id: 2,title: "Tuesday" ,created: "Apr 07,2022" ,category: "task",content: "Hello 20/04/2022 Word",active: true },
+    {id: 3,title: "Wednesday" ,created: "Apr 07,2022" ,category: "idea",content: "Hello 20/04/2022 Word", active: true},
+    {id: 4,title: "Thursday" ,created: "Apr 07,2022" ,category: "randomThought",content: "Hello Word",active: true},
+    {id: 5,title: "Friday" ,created: "Apr 07,2022" ,category: "idea",content: "Hello 20/04/2022 Word",active: true},
+    {id: 6,title: "Saturday" ,created: "Apr 07,2022" ,category: "task",content: "Hello Word", active: true},
+    {id: 7,title: "Sunday" ,created: "Apr 07,2022" ,category: "idea",content: "Hello 20/04/2022 Word", active: true},
+]
 function App() {
     const dispatch = useAppDispatch()
     const {addNote} = noteSlice.actions
-    const note = {id: 1, created: "Apr 07,2022" ,category: "idea",content: "Hello 20/04/2022 Word",title: "ivan", active: true}
-    const note2 = {id: 2, created: "Apr 07,2021" ,category: "task",content: "Hello Word",title: "ivan", active: false}
-    const note3 = {id: 3, created: "Apr 07,2021" ,category: "idea",content: "Word 20/04/2022 20/04/2022",title: "ivan", active: true}
-    const note4 = {id: 4, created: "Apr 07,2021" ,category: "task",content: "Hello Word",title: "ivan", active: false}
     useEffect(() => {
-        dispatch(addNote(note))
-        dispatch(addNote(note2))
-        dispatch(addNote(note3))
-        dispatch(addNote(note4))
+        for (let i = 0;i < defaultNotes.length;i++){
+            dispatch(addNote(defaultNotes[i]))
+        }
     }, [])
   return (
     <div className="app">
