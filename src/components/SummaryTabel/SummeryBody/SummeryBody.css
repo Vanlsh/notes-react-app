@@ -1,0 +1,29 @@
+.summary{
+    display: flex;
+    padding: 0 10px ;
+    background-color: #c4dce1;
+    margin-top: 25px;
+    border-radius: 5px;
+}
+.summary > div{
+    display: inline-block;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 100;
+    margin: auto;
+}
+.summary > div:nth-child(1){
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: gray;
+    display: flex;
+    margin: 6px 20px 6px 0;
+}
+.summary > div:nth-child(1) img {
+    margin: auto;
+}
+.summary > div:nth-child(2){
+    width: 300px;
+    margin: auto 155px auto 0;
+}

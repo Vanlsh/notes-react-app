@@ -1,0 +1,27 @@
+.row-table > div:nth-child(1){
+    margin: auto 90px auto 30px;
+}
+.row-table > div:nth-child(6){
+    margin: auto 10px auto 130px;
+}
+.row-table > div {
+    display: inline-block;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 900;
+    color: white;
+    margin: auto;
+}
+.row-table > div:nth-child(6) img{
+    width: 15px;
+    height: 17px;
+    margin-right: 10px;
+    fill: white;
+}
+.row-table {
+    display: flex;
+    padding: 10px;
+    background-color: gray;
+    border-radius: 5px;
+}
