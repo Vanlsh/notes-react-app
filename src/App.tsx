@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import './App.css'
 import {useAppDispatch} from "./hooks/redux";
-import {noteSlice} from "./store/redusers/NoteSlice";
+import {noteSlice} from "./store/reduсers/NoteSlice";
 import InputForm from "./components/InputForm/InputForm";
 import NoteList from "./components/ListOfNote/NoteList";
 import SummeryTable from "./components/SummaryTabel/SummeryTable";
@@ -24,11 +24,13 @@ function App() {
         }
     }, [])
   return (
-    <div className="app">
-      <NoteList/>
-      <InputForm/>
-      <SummeryTable/>
-    </div>
+      <div className="app">
+          <InputForm/>
+          <div className="app-cont">
+              <NoteList/>
+              <SummeryTable/>
+          </div>
+      </div>
   );
 }
 export default App;

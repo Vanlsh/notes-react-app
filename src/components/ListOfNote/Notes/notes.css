@@ -56,6 +56,7 @@ img {
     margin-right: 5px;
 }
 .added-notes {
+    width: 980px;
     display: flex;
     padding: 0 10px ;
     background-color: #c4dce1;

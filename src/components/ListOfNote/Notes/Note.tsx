@@ -2,7 +2,7 @@ import React from 'react';
 import './notes.css'
 import {INote} from "../../../models/INote";
 import {useAppDispatch} from "../../../hooks/redux";
-import {noteSlice} from "../../../store/redusers/NoteSlice";
+import {noteSlice} from "../../../store/reduсers/NoteSlice";
 
 interface IProps {
     note: INote;

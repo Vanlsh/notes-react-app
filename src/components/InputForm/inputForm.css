@@ -1,5 +1,9 @@
+.form-container{
+    width: 200px;
+    margin: 20px;
+}
 .btn-add {
-    margin: 10px 0 auto 10px;
+    margin: 0 auto;
     padding: 10px;
     text-align: center;
     border: 2px solid gray;
@@ -11,7 +15,7 @@
     height: auto;
 }
 .btn-edit {
-    margin: 10px 0 auto 10px;
+    margin: 0 auto;
     padding: 10px;
     text-align: center;
     border: 2px solid gray;
@@ -23,6 +27,7 @@
     height: auto;
     background: gray;
 }
+
 .btn-edit:hover {
     color: white;
 }
@@ -32,45 +37,22 @@
 }
 .btn-container{
     display: flex;
+    margin: 0 auto;
     flex-direction: column;
-}
-.form-container {
-    display: flex;
-    margin: 20px auto;
-}
-
-label{
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 100;
-}
-.form2-container{
-    display: flex;
-    flex-direction: column;
-
-}
-.form2-container > div:nth-child(1){
-    margin-top: 10px;
 }
 #text-content{
+    width: 200px;
     border-radius: 4px;
-    margin: 10px;
-    width: 560px;
+    margin: 10px 0;
     height: 100px;
     resize: none;
 }
 #text-title{
-    border-radius: 4px;
     width: 200px;
+    border-radius: 4px;
     height: 38px;
 }
-#text-title:checked{
-    border: 2px solid aqua;
-}
-#date{
-    width: 200px;
-    height: 20px;
-}
 .dropdown{
-    margin: auto 0 ;
+    margin: 10px 0;
+    width: 200px;
 }

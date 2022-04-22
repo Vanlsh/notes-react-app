@@ -1,4 +1,6 @@
 .app {
+    display: flex;
+}
+.app-cont{
     width: 1000px;
-    margin: 100px auto 0;
 }

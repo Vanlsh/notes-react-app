@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css'
 import {useAppDispatch} from "../../../hooks/redux";
-import {noteSlice} from '../../../store/redusers/NoteSlice'
+import {noteSlice} from '../../../store/reduсers/NoteSlice'
 const Header = () => {
     const dispatch = useAppDispatch()
     const {changStatus, deleteAll} = noteSlice.actions

@@ -1,5 +1,6 @@
 
 .summary-title {
+    margin-top: 25px;
     display: flex;
     padding: 12px 10px;
     background-color: gray;

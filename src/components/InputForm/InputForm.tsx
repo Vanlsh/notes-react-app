@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Select from "react-select";
 import './inputForm.css'
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
-import {noteSlice} from "../../store/redusers/NoteSlice";
+import {noteSlice} from "../../store/reduсers/NoteSlice";
 
 const options = [
     { value: 'idea', label: 'Idea' },
@@ -40,36 +40,40 @@ const InputForm  = ()  => {
         } else {
             id = Math.floor(Math.random() * 1000000)
         }
+        if(!title){
+           alert("Title can not be empty!")
+            return false;
+        }
         const dateCreated = new Date().toDateString().split(" ")
         const todayDate =  dateCreated[1] + " " + dateCreated[2] + "," + dateCreated[3]
         dispatch(addNote({id, title, created: todayDate, category, content, active: true}))
         setTitle("")
         setCategory("idea")
         setContent("")
+        return true
     }
     const onEditNote = () => {
-        onAddNote();
-        dispatch(setIdEdit(null))
+        const valid = onAddNote();
+        if(valid){
+            dispatch(setIdEdit(null))
+        }
     }
     return (
         <div className="form-container">
-            <div className="form2-container">
-                <div>
-                    {/*<label htmlFor="text-title">Title </label>*/}
-                    <input value={title}
-                           placeholder="Title"
-                           onChange={(value) => setTitle(value.target.value)}
-                           type="text" id="text-title"
-                    />
-                </div>
-                <div className="dropdown">
-                    <Select value={getValue()} options={options} onChange={onChangeCategory}/>
-                </div>
+            <div>
+                <input value={title}
+                       placeholder="Title"
+                       onChange={(value) => setTitle(value.target.value)}
+                       type="text" id="text-title"
+                />
             </div>
             <textarea name="text-content" placeholder="Content" id="text-content"
                       value={content}
                       onChange={(value) => setContent(value.target.value)}
             />
+            <div className="dropdown">
+                <Select value={getValue()} options={options} onChange={onChangeCategory}/>
+            </div>
             <div className="btn-container">
                 {editId ? "" : <div className="btn-add" onClick={onAddNote}>Create Note</div>}
                 {editId ? <div className="btn-edit" onClick={onEditNote}>Edit</div> : ''}
