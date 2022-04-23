@@ -17,11 +17,10 @@ export const noteSlice = createSlice({
     initialState,
     reducers: {
         addNote(state, action: PayloadAction<INote>){
-            for(let i = 0; i < state.notes.length; i++){
-                if(state.notes[i].id === action.payload.id){
-                    state.notes[i] = action.payload
-                    return;
-                }
+            const noteIndex = state.notes.findIndex(note => note.id ===  action.payload.id)
+            if(noteIndex !== -1){
+                state.notes[noteIndex] = action.payload
+                return;
             }
             state.notes.push(action.payload)
         },
