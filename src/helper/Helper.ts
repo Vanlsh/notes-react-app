@@ -1,6 +1,10 @@
 import {INote} from "../models/INote";
-import notes from "../components/ListOfNote/Notes/Notes";
 import {ICounter} from "../models/ICounter";
+
+interface IDateAndContent {
+    newContent: string;
+    date: any;
+}
 
 export default class Helper {
     static  transformCategory(category: string): string {
@@ -25,5 +29,12 @@ export default class Helper {
             })
         })
         return countCategoryStatus;
+    }
+    static getDateFromContent(content:string):IDateAndContent {
+        const reg = /\d{2,4}[./-]\d{2}[./-]\d{2,4}/
+        const newContent = content.split(reg).join("")
+        const dateMatched = content.match(/\d{2,4}[./-]\d{2}[./-]\d{2,4}/g)
+        const date = dateMatched ? (dateMatched.length >= 1 ? dateMatched.join(" ") : dateMatched): " "
+        return {newContent, date}
     }
 }

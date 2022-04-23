@@ -7,7 +7,7 @@ const Notes = () => {
     return (
         <div>
             {notes.map(note => {
-                return note.active === active ? <Note key={note.id} note={note} active={active}/> : ' '
+                return note.active === active ? <Note key={note.id} note={note}/> : ' '
             })}
         </div>
     );
